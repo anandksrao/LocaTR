@@ -8,6 +8,14 @@ All steps in 100_Genome-Processing_README.txt should have been completed before 
 Four structural identification programs will be used. Move into the 02_SIE/ directory and, for safety, create separate directories
 for each identification methodology.
 
+Whilst we recommend the use of LTR_STRUC, LTR Harvest, MGEScan_LTR and RetroTector, other LTR retrotransposon or repeat identification
+software can be easily incorporated into the LocaTR pipeline. This may be necessary as we recommend a multi-tool approach and some 
+programs are limited to certain architecture (LTR_STRUC to Windows, and RetroTector to Mac or Windows, not Linux). 
+Results from any additional programs can be added as part of the validation stage using tab spaced positions files in the format:
+Contig	Start_position	End_position	Strand	Program_code
+Program code is any string. For example, the program code for LTR Harvest is LH. 
+The format is similar to a modified BED, but positions are 1-indexed. Ensure contig names match those in the preprocessed genome.
+
 Requirements:
 LTR Harvest is within the Genome Tools package downloaded in the genome preprocessing steps. 
 LTR_STRUC can be requested from the McDonald Lab at Georgia Tech - see http://www.mcdonaldlab.biology.gatech.edu/ltr_struc.htm for 

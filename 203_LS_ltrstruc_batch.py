@@ -14,7 +14,8 @@ start_time = time.time()
 ls_run_choice = raw_input("Please choose LTR_STRUC run sensitivity. Either: \n    Enter a number between 1 and 10 (1 being sensitive/slow and 10 being fastest)  or\n    Enter \"d\" for default.")
 
 #processes the standard LTR_STRUC folder set up to make appropriate backups and remove the unnecessary "flist.txt"
-os.remove(r"C:\LTR_STRUC\flist.txt")
+if os.path.isfile(r"C:\LTR_STRUC\flist.txt"):
+	os.remove(r"C:\LTR_STRUC\flist.txt")
 shutil.copy(r"C:\LTR_STRUC\five_p_end.txt", r"C:\LTR_STRUC\COPY-five_p_end")
 shutil.copy(r"C:\LTR_STRUC\log.txt", r"C:\LTR_STRUC\COPY-log")
 shutil.copy(r"C:\LTR_STRUC\pbs.txt", r"C:\LTR_STRUC\COPY-pbs")
@@ -57,6 +58,7 @@ for seq_file in os.listdir(r"C:\LTR_STRUC\sequences"):
 	process = False
 	while process == False:
 		if WindowExists(r"C:\LTR_STRUC\LTR_STRUC_1_1.exe"):
+			time.sleep(2)
 			process = True
 	
 	shell.AppActivate(r"C:\LTR_STRUC\LTR_STRUC_1_1.exe")

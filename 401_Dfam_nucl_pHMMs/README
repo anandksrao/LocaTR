@@ -7,6 +7,6 @@ Noticed the Dfam folder (401) was too large for GitHub upload.
 Am now hosting on my Google Drive as an intact tarball.
 When you download this, remove the existing 401 directory, then access the directory with this command:
 
-tar -cxvf 401_Dfam_nucl_pHMMs.tar.gz
+tar -zxvf 401_Dfam_nucl_pHMMs.tar.gz
 
 File available at :- http://tinyurl.com/h2mjys2
